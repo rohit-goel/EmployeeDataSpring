@@ -1,5 +1,7 @@
 package com.form.service.implement;
 
+import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ public class FormServiceImplement implements FormService {
 	private static final Logger log = LoggerFactory.getLogger(FormServiceImplement.class);
 
 	@Override
-	public FormMV getData()  {
+	public ArrayList<FormMV> getData()  {
 		log.info("Entered in Service getData");
 		return formRepository.getData();
 	}

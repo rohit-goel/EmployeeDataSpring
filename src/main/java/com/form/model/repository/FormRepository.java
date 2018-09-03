@@ -1,5 +1,7 @@
 package com.form.model.repository;
 
+import java.util.ArrayList;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,8 +25,9 @@ public class FormRepository {
 	private static final Logger log = LoggerFactory.getLogger(FormController.class);
 
 
-	public FormMV getData()  {
+	public ArrayList<FormMV> getData()  {
 		FormMV formMV = null;
+		ArrayList<FormMV> list = new ArrayList<>();
 		try {
 			log.info("in getData");
 			String query = "select * from EmpTable";
@@ -69,7 +72,7 @@ public class FormRepository {
 			}
 		}
 		log.info("before return");
-		return formMV;
+		return list;
 
 	}
 
