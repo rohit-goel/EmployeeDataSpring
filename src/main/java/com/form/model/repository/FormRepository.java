@@ -1,7 +1,5 @@
 package com.form.model.repository;
 
-import java.util.ArrayList;
-
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +14,7 @@ import com.form.model.FormVM;
 
 import java.sql.Connection;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 @Repository
 public class FormRepository {
@@ -47,12 +46,14 @@ public class FormRepository {
 				log.info("in while");
 				formMV = new FormMV();
 				formMV.setFirstName(resultset.getString("firstName"));
+				
 				formMV.setLastName(resultset.getString("lastName"));
 				formMV.setEmailId(resultset.getString("emailId"));
 				formMV.setPhoneNo(resultset.getString("phoneNo"));
 				formMV.setPass(resultset.getString("pass"));
 				formMV.setGender(resultset.getString("gender"));
 				formMV.setEmpId(resultset.getString("empId"));
+				list.add(formMV);
 			}
 			log.info("after while");
 //			resultset.close();
